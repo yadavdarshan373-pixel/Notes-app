@@ -1,8 +1,7 @@
-from rest_framework.routers import DefaultRouter
-from .views import NoteViewSet
+from django.urls import path
+from .views import NoteListCreate, NoteDetail
 
-router = DefaultRouter()
-router.register(r'notes', NoteViewSet)
-
-urlpatterns = router.urls
-
+urlpatterns = [
+    path('notes/', NoteListCreate.as_view()),           # Handles GET(all) and Post(create)
+    path('notes/<int:pk>/', NoteDetail.as_view()),      # Handles Put(update) and Delete(delete)
+]

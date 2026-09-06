@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import Header from './components/header';
+import Sidebar from './components/Sidebar';
+import Footer from './components/footer';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -60,36 +63,43 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      <h1>My Notes</h1>
+    <div className="app-layout">
+    <Header />
+    <div className="app-body">
+      <Sidebar />
+      <div className="app-container">
+        <h1>My Notes</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="Content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <button type="submit">{editingId ? 'Update Note' : 'Add Note'}</button>
-        {editingId && (
-          <button type="button" onClick={handleCancelEdit}>Cancel</button>
-        )}
-      </form>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <textarea
+            placeholder="Content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+          <button type="submit">{editingId ? 'Update Note' : 'Add Note'}</button>
+          {editingId && (
+            <button type="button" onClick={handleCancelEdit}>Cancel</button>
+          )}
+        </form>
 
-      {notes.map(note => (
-        <div className="note-card" key={note.id}>
-          <h3>{note.title}</h3>
-          <p>{note.content}</p>
-          <small>{note.date}</small>
-          <button onClick={() => handleEditClick(note)}>Edit</button>
-          <button onClick={() => handleDelete(note.id)}>Delete</button>
-        </div>
-      ))}
+        {notes.map(note => (
+          <div className="note-card" key={note.id}>
+            <h3>{note.title}</h3>
+            <p>{note.content}</p>
+            <small>{note.date}</small>
+            <button onClick={() => handleEditClick(note)}>Edit</button>
+            <button onClick={() => handleDelete(note.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
+    </div>
+      <Footer />
     </div>
   );
 }

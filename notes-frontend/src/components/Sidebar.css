@@ -1,0 +1,41 @@
+.app-sidebar {
+  width: 180px;
+  background: linear-gradient(180deg, rgba(224, 242, 254, 0.9) 0%, rgba(191, 219, 254, 0.8) 100%);
+  color: #0f172a;
+  padding: 18px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.sidebar-title {
+  margin: 0 0 14px;
+  padding: 0 8px 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.18);
+}
+
+.app-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-sidebar li {
+  padding: 12px 12px;
+  cursor: pointer;
+  color: #1e3a8a;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.app-sidebar li:hover {
+  background: rgba(96, 165, 250, 0.18);
+  color: #0f172a;
+  transform: translateX(2px);
+}

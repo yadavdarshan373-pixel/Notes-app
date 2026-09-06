@@ -1,0 +1,56 @@
+.app-footer {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 40%, #312e81 100%);
+  color: #f8fafc;
+  text-align: center;
+  padding: 18px 28px;
+  margin-top: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 -10px 22px rgba(15, 23, 42, 0.18);
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+.footer-brand {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e9d5ff;
+}
+
+.footer-copy,
+.footer-meta {
+  font-size: 0.9rem;
+  color: #dbeafe;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 2px;
+  color: #f5f3ff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+.github-link:hover {
+  opacity: 0.8;
+}
+
+.footer-line {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #c4b5fd;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
